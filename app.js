@@ -4,6 +4,8 @@ var handlebars = require('express-handlebars');
 
 var	app = express();
 var viewsPath = path.join(__dirname, '/app/views');
+	
+	app.use(express.static(__dirname + '/app/public'));
 
 	// Set up handlbars view engine
 	app.set('views', viewsPath);
