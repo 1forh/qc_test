@@ -12,6 +12,8 @@ var viewsPath = path.join(__dirname, '/app/views');
 	
 app.use(express.static(__dirname + '/app/public'));
 
+
+
 // Set up handlbars view engine
 app.set('views', viewsPath);
 var hbs = handlebars.create({  
@@ -25,6 +27,12 @@ app.set('view engine', 'handlebars');
 // set the port - 3000
 app.set('port', process.env.PORT || 3000);
 
+// Tests
+app.use(function(request, response, next){
+	response.locals.showTests = app.get('env') !== 'production' && request.query.test === '1';
+	next();
+});
+
 // route - index
 app.get('/', function(request, response){
 	response.render('home');
@@ -32,8 +40,10 @@ app.get('/', function(request, response){
 
 // route - about
 app.get('/about', function(request, response){
-
-	response.render('about', { fortune: fortune.getFortune() });
+	response.render('about', { 
+		fortune: fortune.getFortune(), 
+		pageTestScript: '/tests/about.js' 
+	});
 });
 
 // custom 404 page

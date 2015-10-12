@@ -7,25 +7,28 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>qc_test</title>
+        {{#if showTests}}
+          <link rel="stylesheet" href="/vendor/mocha.css">
+        {{/if}}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/css/main.css">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <img src="images/placeholder.gif" alt="placeholder">
+        <img src="/images/placeholder.gif" alt="placeholder">
 
         {{{body}}}
         
 
 
 
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -35,5 +38,20 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+        {{#if showTests}}
+          <div id="mocha"></div>
+          <script src="/vendor/mocha.js"></script>
+          <script src="/vendor/chai.js"></script>
+          <script>
+            mocha.ui('tdd');
+            var assert = chai.assert;
+          </script>
+          <script src="/tests/global.js"></script>
+          {{#if pageTestScript}}
+            <script src="{{pageTestScript}}"></script>
+          {{/if}}
+          <script>mocha.run();</script>
+        {{/if}}
+
     </body>
 </html>
