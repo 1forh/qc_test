@@ -11,19 +11,19 @@ app.get('/scrape', function(req, res){
 			var json = { header : ""};
 
 			$('.hero-message').filter(function(){
-		        var data = $(this);
-		        header = data.children().first().text();
+        var data = $(this);
+        header = data.children().first().text();
 
-		        json.header = header;
-		        
-	        })
+        json.header = header;
+        
+      })
 
-	        $('.star-box-giga-star').filter(function(){
-	        	var data = $(this);
-	        	rating = data.text();
+      $('.star-box-giga-star').filter(function(){
+      	var data = $(this);
+      	rating = data.text();
 
-	        	json.rating = rating;
-	        })
+      	json.rating = rating;
+      })
 		}
 
 		fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){

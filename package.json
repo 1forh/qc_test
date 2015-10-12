@@ -2,7 +2,7 @@
   "name": "qc_test",
   "version": "1.0.0",
   "description": "Quality control test for websites",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,10 +18,14 @@
   "homepage": "https://github.com/1forh/qc_test#readme",
   "devDependencies": {
     "browser-sync": "^2.9.11",
+    "express-handlebars": "^2.0.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }
