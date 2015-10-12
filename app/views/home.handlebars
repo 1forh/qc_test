@@ -1,1 +1,75 @@
-<h1>Quality Control Test</h1>
+
+<div id="description" class="row">
+  <div class="col-lg-12">
+    <div class="page-header">
+      <h1>Quality Control Check for Websites</h1>
+      <p>Type a URL in the input field below and click "Go!". The test results will be ouput below the input field.</p>
+    </div>
+  </div><!-- /.col-lg-12 -->
+</div><!-- /.row -->
+<div id="input" class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <form action="/the_test" method="get">
+      <div class="input-group">
+        <input type="text" name="domain" class="form-control" placeholder="Quality control this...">
+        <span class="input-group-btn">
+          <input type="submit" value="Go!" class="btn btn-default">
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </div><!-- /.col-md-6 .col-md-offset-3 -->
+</div><!-- /.row -->
+<div id="output" class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="test_output">
+      <table class="table table-bordered">
+        <caption>Check this information for quality.</caption>
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Contents</th>
+            <th>Pass?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Title tag</th>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <th>Meta Description</th>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare est nibh, sit amet consectetur libero mattis vel. Maecenas a pharetra massa, vel venenatis augue. Sed quam diam, tempor at sapien quis, vulputate molestie tellus. Sed vitae risus a risus mollis aliquam. </td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <th>Meta Keywords</th>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare est nibh, sit amet consectetur libero mattis vel. Maecenas a pharetra massa, vel venenatis augue. Sed quam diam, tempor at sapien quis, vulputate molestie tellus. Sed vitae risus a risus mollis aliquam. </td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <th>Favicon path</th>
+            <td>/img/favicon.png</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <th>H1 tag(s)</th>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <th>Image src tags</th>
+            <td>/img/someImg.jpg</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <th>Image alt tags</th>
+            <td>Lorem ipsum dolor</td>
+            <td>&#10003;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div><!-- /.col-md-6 .col-md-offset-3 -->
+</div><!-- /.row -->
+
