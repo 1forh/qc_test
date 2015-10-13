@@ -1,16 +1,19 @@
 // Dependencies
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 var handlebars = require('express-handlebars');  
+var request = require('request');
+var cheerio = require('cheerio');
 
 // Custom Libraries - ./ signals to node not to look in the node_modules directory
 var fortune = require('./app/lib/fortune');
+var scraper = require('./scraper');
 
 // App.js Variables
 var	app = express();
 var viewsPath = path.join(__dirname, '/app/views');
 	app.use(express.static(__dirname + '/app/public'));
-var domain;
 
 
 // set the port - 3000
@@ -31,15 +34,17 @@ app.use(require('body-parser').urlencoded({
 	extended:true }));
 app.get('/the_test', function(request, response){
 	// dummy value for CSRF
-	response.render('the_test', {
-		csrf: 'CSRF token goes here'
-	});
+	response.render('the_test');
 });
+// Writes the domain entered in the form to app/data/domain.txt
 app.post('/process', function(request, response){
-	domain = request.body.domain;
-	console.log('Form (from querystring): ' + request.query.form);
-	console.log('CSRF token (from hidden form field): ' + request.body._csrf);
-	console.log('Domain: ' + domain);
+	var domain = request.body.domain;
+		
+		fs.writeFile('app/data/domain.txt', domain, function (err) {
+		  if (err) return console.log(err);
+		  console.log('Your domain has been saved!');;
+		});
+	
 	response.redirect(303, '/results');
 });
 
@@ -47,6 +52,8 @@ app.post('/process', function(request, response){
 var routes = require('./routes');
 app.use('/', routes);
 app.use('/results', routes);
+
+
 
 
 app.listen(app.get('port'), function(){

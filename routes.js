@@ -1,11 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
-});
-
 // route - index
 router.get('/', function(request, response){
 	response.render('home');
@@ -14,6 +9,11 @@ router.get('/', function(request, response){
 // thank-you
 router.get('/results', function(request, response){
 	response.render('results');
+});
+
+// scraper
+router.get('/scrape', function(request, response){
+
 });
 
 // // route - about
