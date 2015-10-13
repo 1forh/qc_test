@@ -15,13 +15,6 @@ app.use(express.static(__dirname + '/app/public'));
 // set the port - 3000
 app.set('port', process.env.PORT || 3000);
 
-// Tests
-app.use(function(request, response, next){
-	response.locals.showTests = app.get('env') !== 'production' && request.query.test === '1';
-	next();
-});
-
-
 // Set up handlbars view engine
 app.set('views', viewsPath);
 var hbs = handlebars.create({  
@@ -32,11 +25,32 @@ var hbs = handlebars.create({
 app.engine('handlebars', hbs.engine);  
 app.set('view engine', 'handlebars'); 
 
+// Form handling
+app.use(require('body-parser').urlencoded({
+	extended:true }));
+app.get('/test_test', function(request, response){
+	// dummy value for CSRF
+	response.render('the_test', {
+		csrf: 'CSRF token goes here'
+	});
+});
+app.post('/process', function(request, response){
+
+	console.log('Form (from querystring): ' + request.query.form);
+	console.log('CSRF token (from hidden form field): ' + request.body._csrf);
+	console.log('Domain: ' + request.body.domain);
+	response.redirect(303, '/results');
+});
+
 // route - index
 app.get('/', function(request, response){
 	response.render('home');
 });
 
+// thank-you
+app.get('/results', function(requestion, response){
+	response.render('results');
+});
 // // route - about
 // app.get('/about', function(request, response){
 // 	response.render('about', { 

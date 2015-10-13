@@ -18,13 +18,11 @@
   "homepage": "https://github.com/1forh/qc_test#readme",
   "devDependencies": {
     "browser-sync": "^2.9.11",
-    "chai": "^3.3.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.6.0",
-    "mocha": "^2.3.3"
+    "gulp-sourcemaps": "^1.6.0"
   },
   "dependencies": {
     "body-parser": "^1.14.1",
