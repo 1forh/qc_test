@@ -2,9 +2,9 @@
   "name": "qc_test",
   "version": "1.0.0",
   "description": "Quality control test for websites",
-  "main": "app.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app/app.js"
   },
   "repository": {
     "type": "git",
