@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var fs = require('fs');
 var handlebars = require('express-handlebars');  
-var request = require('request');
+var requestNPM = require('request');
 var cheerio = require('cheerio');
 
 // App.js Variables
@@ -13,7 +13,7 @@ var viewsPath = path.join(__dirname, '/views');
 
 // Custom Libraries - ./ signals to node not to look in the node_modules directory
 // var fortune = require('./lib/fortune');
-var data = require('./scraper');
+
 
 // set the port - 3000
 app.set('port', process.env.PORT || 3000);
@@ -41,13 +41,54 @@ app.get('/the_test', function(request, response) {
 // Writes the domain entered in the form to app/data/domain.txt
 app.post('/process', function(request, response){
 	var domain = request.body.domain;
+
+	console.log("Domain: " + domain);
 		
-		fs.writeFile('data/domain.txt', domain, function (err) {
-		  if (err) return console.log(err);
-		  console.log('Your domain has been saved!');;
+	requestNPM(domain, function(error, response, html){
+    if(!error){
+      $ = cheerio.load(html);
+			var json = { title: "", description: "", keywords: "", favicon: "", header: ""};
+
+			// Grab title tag
+			$('title').filter(function(){
+				var data = $(this);
+				var title = data.text();
+				json.title = title;
+			});
+			// Grab meta description
+			$('meta[name=description]').filter(function(){
+				var data = $(this);
+				var description = data.attr("content");
+				json.description = description;
+			});
+			// Grab meta keywords
+			$('meta[name=keywords]').filter(function(){
+				var data = $(this);
+				var keywords = data.attr("content");
+				json.keywords = keywords;
+			});
+			// Grab favicon path
+			$('link[rel=icon]').filter(function(){
+				var data = $(this);
+				var favicon = data.attr("href");
+				json.favicon = favicon;
+			});
+			// Grab header - h1 tag
+      $('h1').filter(function(){
+        var data = $(this);
+        var header = data.text();
+        json.header = header;
+        
+      });
+    } 
+    fs.writeFile('results.json', JSON.stringify(json, null, 4), function(err){
+		  console.log('File successfully written! - Check your project directory for the output.json file');
+
 		});
-	
-	response.render('./results', {
+		
+		
+  });
+  response.render('./results', {
 		domain: domain
 	});
 });

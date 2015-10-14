@@ -1,15 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var fs = require("fs");
 
 // route - index
 router.get('/', function(request, response){
 	response.render('home');
 });
 
-// route - results
-router.get('/results', function(request, response){
-	response.render('results');
-});
 
 // // scraper
 // router.get('/scrape', function(request, response){
