@@ -47,7 +47,7 @@ app.post('/process', function(request, response){
 	requestNPM(domain, function(err, res, html){
     if(!err){
       $ = cheerio.load(html);
-      var json = { title: "", description: "", keywords: "", favicon: "", header: ""};
+      var json = { title: "", description: "", keywords: "", favicon: "", header: "", srcTag: "", altTag: ""};
 			// Grab title tag
 			$('title').filter(function(){
 				var data = $(this);
@@ -69,7 +69,7 @@ app.post('/process', function(request, response){
 			// Grab favicon path
 			$('link[rel=icon]').filter(function(){
 				var data = $(this);
-				var favicon = data.attr("href");
+				var favicon = data.attr('href');
 				json.favicon = favicon;
 			});
 			// Grab header - h1 tag
@@ -79,6 +79,17 @@ app.post('/process', function(request, response){
         json.header = header;
         
       });
+      $('img').filter(function(){
+      	var data = $(this);
+      	var srcTag = data.attr('src');
+      	json.srcTag = srcTag;
+      });
+      $('img').filter(function(){
+      	var data = $(this);
+      	var altTag = data.attr('alt');
+      	json.altTag = altTag;
+      });
+      
 
     } 
     response.render('./results', {
@@ -87,9 +98,11 @@ app.post('/process', function(request, response){
 			description: json.description,
 			keywords: json.keywords,
 			favicon: json.favicon,
-			header: json.header
+			header: json.header,
+			srcTag: json.srcTag,
+			altTag: json.altTag
 		});
-    
+    console.log(json);
     console.log("Check for results in a browser");
   });
 	

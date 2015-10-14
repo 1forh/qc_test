@@ -16,47 +16,48 @@
           <tr>
             <th>Element</th>
             <th>Contents</th>
-            <th>Pass?</th>
+            {{!-- <th>Pass?</th> --}}
           </tr>
         </thead>
         <tbody>
           <tr>
             <th>Title tag</th>
             <td>{{title}}</td>
-            <td>&#10003;</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
             <th>Meta Description</th>
             <td>{{description}}</td>
-            <td>&#10003;</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
             <th>Meta Keywords</th>
             <td>{{keywords}}</td>
-            <td>&#10003;</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
             <th>Favicon path</th>
             <td>{{favicon}}</td>
-            <td>&#10003;</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
             <th>H1 tag(s)</th>
             <td>{{header}}</td>
-            <td>&#10003;</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
-            <th>Image src tags</th>
-            <td>/img/someImg.jpg</td>
-            <td>&#10003;</td>
+            <th>Image src tag</th>
+            <td>{{srcTag}}</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
-            <th>Image alt tags</th>
-            <td>Lorem ipsum dolor</td>
-            <td>&#10003;</td>
+            <th>Image alt tag</th>
+            <td>{{altTag}}</td>
+            {{!-- <td>&#10003;</td> --}}
           </tr>
         </tbody>
       </table>
+      <p class="text-danger">Image source tag and alt tag only prints out one image on the page. May still have to check the document manually. Will be fixed soon&trade;.</p>
     </div>
   </div><!-- /.col-md-6 .col-md-offset-3 -->
 </div><!-- /.row -->
