@@ -10,4 +10,4 @@ Input a url and the test will output the following:
  - Image src tags 
  - Image alt tags
  
-Maximum pages that will be tested at one time: 10
+Maximum pages that will be tested at one time: 1
