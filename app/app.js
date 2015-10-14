@@ -28,13 +28,16 @@ var hbs = handlebars.create({
 app.engine('handlebars', hbs.engine);  
 app.set('view engine', 'handlebars'); 
 
+
+
 // Form handling
 app.use(require('body-parser').urlencoded({
 	extended:true }));
-app.get('/the_test', function(request, response){
-	// dummy value for CSRF
+
+app.get('/the_test', function(request, response) {
 	response.render('the_test');
 });
+
 // Writes the domain entered in the form to app/data/domain.txt
 app.post('/process', function(request, response){
 	var domain = request.body.domain;
@@ -54,8 +57,6 @@ var routes = require('./routes');
 app.use('/', routes);
 app.use('/results', routes);
 // app.use('/scrape', routes);
-
-
 
 app.listen(app.get('port'), function(){
 	console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');

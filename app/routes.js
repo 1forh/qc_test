@@ -6,7 +6,7 @@ router.get('/', function(request, response){
 	response.render('home');
 });
 
-// thank-you
+// route - results
 router.get('/results', function(request, response){
 	response.render('results');
 });
