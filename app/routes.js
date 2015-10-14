@@ -11,10 +11,10 @@ router.get('/results', function(request, response){
 	response.render('results');
 });
 
-// scraper
-router.get('/scrape', function(request, response){
-
-});
+// // scraper
+// router.get('/scrape', function(request, response){
+// 	response.redirect(303, '/results');
+// });
 
 // // route - about
 // app.get('/about', function(request, response){

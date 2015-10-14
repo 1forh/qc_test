@@ -36,4 +36,6 @@ scraper.get('/scrape', function(req, res){
 
 scraper.listen(4000);
 console.log('Magic happens on port 4000');
-exports = module.exports = scraper;
+
+
+module.exports = scraper;

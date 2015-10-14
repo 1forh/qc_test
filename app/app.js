@@ -6,15 +6,14 @@ var handlebars = require('express-handlebars');
 var request = require('request');
 var cheerio = require('cheerio');
 
-// Custom Libraries - ./ signals to node not to look in the node_modules directory
-var fortune = require('./lib/fortune');
-var scraper = require('./scraper');
-
 // App.js Variables
 var	app = express();
 var viewsPath = path.join(__dirname, '/views');
 	app.use(express.static(__dirname + '/public'));
 
+// Custom Libraries - ./ signals to node not to look in the node_modules directory
+// var fortune = require('./lib/fortune');
+var scraper = require('./scraper');
 
 // set the port - 3000
 app.set('port', process.env.PORT || 3000);
@@ -45,14 +44,16 @@ app.post('/process', function(request, response){
 		  console.log('Your domain has been saved!');;
 		});
 	
-	response.redirect(303, '/results');
+	response.render('./results', {
+		domain: domain
+	});
 });
 
 // Routes require
 var routes = require('./routes');
 app.use('/', routes);
 app.use('/results', routes);
-
+// app.use('/scrape', routes);
 
 
 
@@ -60,3 +61,5 @@ app.listen(app.get('port'), function(){
 	console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
 
+
+module.exports = app;
