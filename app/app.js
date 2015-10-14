@@ -44,11 +44,10 @@ app.post('/process', function(request, response){
 
 	console.log("Domain: " + domain);
 		
-	requestNPM(domain, function(error, response, html){
-    if(!error){
+	requestNPM(domain, function(err, res, html){
+    if(!err){
       $ = cheerio.load(html);
-			var json = { title: "", description: "", keywords: "", favicon: "", header: ""};
-
+      var json = { title: "", description: "", keywords: "", favicon: "", header: ""};
 			// Grab title tag
 			$('title').filter(function(){
 				var data = $(this);
@@ -80,17 +79,21 @@ app.post('/process', function(request, response){
         json.header = header;
         
       });
-    } 
-    fs.writeFile('results.json', JSON.stringify(json, null, 4), function(err){
-		  console.log('File successfully written! - Check your project directory for the output.json file');
 
+    } 
+    response.render('./results', {
+			domain: domain,
+			title: json.title,
+			description: json.description,
+			keywords: json.keywords,
+			favicon: json.favicon,
+			header: json.header
 		});
-		
-		
+    
+    console.log("Check for results in a browser");
   });
-  response.render('./results', {
-		domain: domain
-	});
+	
+  
 });
 
 // Routes require
