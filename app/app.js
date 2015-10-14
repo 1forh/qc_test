@@ -13,7 +13,7 @@ var viewsPath = path.join(__dirname, '/views');
 
 // Custom Libraries - ./ signals to node not to look in the node_modules directory
 // var fortune = require('./lib/fortune');
-var scraper = require('./scraper');
+var data = require('./scraper');
 
 // set the port - 3000
 app.set('port', process.env.PORT || 3000);

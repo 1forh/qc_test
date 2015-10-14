@@ -3,10 +3,11 @@ var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 
-var scraper = express();
+var data = express();
+
 // Scrape the url that was posted
-scraper.get('/scrape', function(req, res){
-  // Scrape this
+data.get('/data', function(req, res){
+  // Assign value of domain.txt to url variable
   var url = fs.readFileSync('data/domain.txt', 'utf8');
 
   request(url, function(error, response, html){
@@ -18,24 +19,18 @@ scraper.get('/scrape', function(req, res){
       $('.hero-message').filter(function(){
         var data = $(this);
         header = data.children().first().text();
-
         json.header = header;
         
       });
-    } else {
-      console.log(error);
-    }
+    } 
 
-    fs.writeFile('data/results.json', JSON.stringify(json, null, 4), function(err){
-      console.log('File successfully written! - Check your project directory for the output.json file');
-    });
-
-    res.send('Check your console!')
+      res.json(json);
   });
 });
 
-scraper.listen(4000);
-console.log('Magic happens on port 4000');
+data.listen(4000, function(){
+  console.log('View endpoint at 4000/data');
+});
 
 
-module.exports = scraper;
+module.exports = data;

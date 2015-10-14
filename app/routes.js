@@ -13,7 +13,7 @@ router.get('/results', function(request, response){
 
 // // scraper
 // router.get('/scrape', function(request, response){
-// 	response.redirect(303, '/results');
+	
 // });
 
 // // route - about
