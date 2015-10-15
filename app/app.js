@@ -47,7 +47,7 @@ app.post('/process', function(request, response){
 	requestNPM(domain, function(err, res, html){
     if(!err){
       $ = cheerio.load(html);
-      var json = { title: "", description: "", keywords: "", favicon: "", header: "", srcTag: "", altTag: ""};
+      var json = { title: "", description: "", keywords: "", favicon: "", header: "", srcTag: "", altTag: "", address: "", telephone: ""};
 			// Grab title tag
 			$('title').filter(function(){
 				var data = $(this);
@@ -79,18 +79,30 @@ app.post('/process', function(request, response){
         json.header = header;
         
       });
+      // Grab img src content
       $('img').filter(function(){
       	var data = $(this);
       	var srcTag = data.attr('src');
       	json.srcTag = srcTag;
       });
+      // Grab img alt content
       $('img').filter(function(){
       	var data = $(this);
       	var altTag = data.attr('alt');
       	json.altTag = altTag;
       });
-      
-
+      // Grab address
+      $('.address').filter(function(){
+      	var data = $(this);
+      	var address = data.text();
+      	json.address = address;
+      });
+      // Grab telephone
+      $('.telephone').filter(function(){
+      	var data = $(this);
+      	var telephone = data.text();
+      	json.telephone = telephone;
+      });
     } 
     response.render('./results', {
 			domain: domain,
@@ -100,7 +112,9 @@ app.post('/process', function(request, response){
 			favicon: json.favicon,
 			header: json.header,
 			srcTag: json.srcTag,
-			altTag: json.altTag
+			altTag: json.altTag,
+			address: json.address,
+			telephone: json.telephone
 		});
     console.log(json);
     console.log("Check for results in a browser");
