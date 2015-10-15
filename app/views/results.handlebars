@@ -11,7 +11,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="test_output">
       <p class="text-primary">Information: If the Contents field is blank, the Element is missing.</p>
-      <p class="text-primary">Information: Address and Telephone checks the contents of the classes .address and .telephone.</p>
+      <p class="text-primary">Information: Address, Telephone and Video checks the contents of the classes .address, .telephone and .video respectively.</p>
       <p class="text-danger">*Attention: Image source tag and alt tag only prints out one image on the page. May still have to check the document manually. Will be fixed soon&trade;.</p>
       <p class="text-danger">*Attention: The Google Analytics grabber is shaky. If the output is not "/google_analytics_auto.js", check document manually.</p>
       
@@ -60,6 +60,17 @@
             <td>{{altTag}}</td>
             {{!-- <td>&#10003;</td> --}}
           </tr>
+          
+          <tr>
+            <th>Google Web Master Tools</th>
+            <td>{{gwebmaster}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Google Analytics *</th>
+            <td>{{ganalytics}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
           <tr>
             <th>Address</th>
             <td>{{address}}</td>
@@ -71,16 +82,10 @@
             {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
-            <th>Google Web Master Tools</th>
-            <td>{{gwebmaster}}</td>
+            <th>Video</th>
+            <td>{{video}}</td>
             {{!-- <td>&#10003;</td> --}}
           </tr>
-          <tr>
-            <th>Google Analytics *</th>
-            <td>{{ganalytics}}</td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-
         </tbody>
       </table>
 

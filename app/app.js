@@ -57,6 +57,7 @@ app.post('/process', function(request, response){
      		altTag: "", 
      		address: "", 
      		telephone: "",
+     		video: "",
      		gwebmaster: "",
      		ganalytics: ""
     	};
@@ -115,6 +116,12 @@ app.post('/process', function(request, response){
       	var telephone = data.text();
       	json.telephone = telephone;
       });
+      // Grab video
+      $('.video iframe').filter(function(){
+      	var data = $(this);
+      	var video = data.attr('src');
+      	json.video = video;
+      });
       // Grab Google Web Master Tools verification 
       $('meta[name=google-site-verification]').filter(function(){
       	var data = $(this);
@@ -139,6 +146,7 @@ app.post('/process', function(request, response){
 			altTag: json.altTag,
 			address: json.address,
 			telephone: json.telephone,
+			video: json.video,
 			gwebmaster: json.gwebmaster,
 			ganalytics: json.ganalytics
 		});
