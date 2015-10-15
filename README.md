@@ -1,5 +1,7 @@
 #Quality Control Test for Websites
 
+Version 1.0.0
+
 Input a url and the test will output the following:
 
  - Title tag
