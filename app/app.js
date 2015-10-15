@@ -56,7 +56,9 @@ app.post('/process', function(request, response){
      		srcTag: "", 
      		altTag: "", 
      		address: "", 
-     		telephone: ""
+     		telephone: "",
+     		gwebmaster: "",
+     		ganalytics: ""
     	};
 			// Grab title tag
 			$('title').filter(function(){
@@ -113,6 +115,18 @@ app.post('/process', function(request, response){
       	var telephone = data.text();
       	json.telephone = telephone;
       });
+      // Grab Google Web Master Tools verification 
+      $('meta[name=google-site-verification]').filter(function(){
+      	var data = $(this);
+      	var gwebmaster = data.attr('content');
+      	json.gwebmaster = gwebmaster;
+      }); 
+      // Grab Google Analytics script src
+      $('head script').filter(function(){
+      	var data = $(this);
+      	var ganalytics = data.attr('src');
+      	json.ganalytics = ganalytics;
+      });
     } 
     response.render('./results', {
 			domain: domain,
@@ -124,7 +138,9 @@ app.post('/process', function(request, response){
 			srcTag: json.srcTag,
 			altTag: json.altTag,
 			address: json.address,
-			telephone: json.telephone
+			telephone: json.telephone,
+			gwebmaster: json.gwebmaster,
+			ganalytics: json.ganalytics
 		});
     console.log(json);
     console.log("Check for results in a browser");
