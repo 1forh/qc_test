@@ -11,5 +11,8 @@ Input a url and the test will output the following:
  - H1 tag(s)
  - Image src tags 
  - Image alt tags
+ - Address (using .address class)
+ - Telephone Number (using .telephone class)
+
  
 Maximum pages that will be tested at one time: 1
