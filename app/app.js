@@ -47,7 +47,17 @@ app.post('/process', function(request, response){
 	requestNPM(domain, function(err, res, html){
     if(!err){
       $ = cheerio.load(html);
-      var json = { title: "", description: "", keywords: "", favicon: "", header: "", srcTag: "", altTag: "", address: "", telephone: ""};
+      var json = { 
+      	title: "", 
+     		description: "", 
+     		keywords: "", 
+     		favicon: "", 
+     		header: "", 
+     		srcTag: "", 
+     		altTag: "", 
+     		address: "", 
+     		telephone: ""
+    	};
 			// Grab title tag
 			$('title').filter(function(){
 				var data = $(this);
