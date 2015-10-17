@@ -58,6 +58,7 @@ app.post('/process', function(request, response){
      		address: "", 
      		telephone: "",
      		video: "",
+        hours: "",
      		gwebmaster: "",
      		ganalytics: ""
     	};
@@ -116,6 +117,12 @@ app.post('/process', function(request, response){
       	var telephone = data.text();
       	json.telephone = telephone;
       });
+      // Grab business hours
+      $('.hours').filter(function(){
+        var data = $(this);
+        var telephone = data.text();
+        json.telephone = telephone;
+      });
       // Grab video
       $('.video iframe').filter(function(){
       	var data = $(this);
@@ -147,6 +154,7 @@ app.post('/process', function(request, response){
 			address: json.address,
 			telephone: json.telephone,
 			video: json.video,
+      hours: json.hours,
 			gwebmaster: json.gwebmaster,
 			ganalytics: json.ganalytics
 		});

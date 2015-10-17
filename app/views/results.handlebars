@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-md-6">
           <p class="text-success">Information: If the Contents field is blank, the Element is missing.</p>
-          <p class="text-success">Information: Address, Telephone and Video checks the contents of the classes .address, .telephone and .video respectively.</p>
+          <p class="text-success">Information: Address, Telephone, Business hours and Video checks the contents of the classes .address, .telephone, .hours and .video respectively.</p>
         </div>
         <div class="col-md-6">
           <p class="text-danger">*Attention: Image source tag and alt tag only prints out one image on the page. May still have to check the document manually. Will be fixed soon&trade;.</p>
@@ -84,6 +84,11 @@
           <tr>
             <th>Telephone</th>
             <td>{{telephone}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Business Hours</th>
+            <td>{{hours}}</td>
             {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
