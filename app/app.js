@@ -47,6 +47,23 @@ app.post('/process', function(request, response){
 	requestNPM(domain, function(err, res, html){
     if(!err){
       $ = cheerio.load(html);
+      // Assign scraper elemtn variables
+      var title = 'title',
+          description = 'meta[name=description]',
+          keywords = 'meta[name=keywords]',
+          favicon = 'link[rel=icon]',
+          hOne = 'h1',
+          img = 'img',
+          address = '.address',
+          telephone = '.telephone',
+          video = '.video iframe',
+          hours = '.hours',
+          wmt = 'meta[name=google-site-verification]',
+          analytics = 'head script';
+
+
+
+      // Assign json variables
       var json = { 
       	title: "", 
      		description: "", 
@@ -62,81 +79,83 @@ app.post('/process', function(request, response){
      		gwebmaster: "",
      		ganalytics: ""
     	};
+      
+
 			// Grab title tag
-			$('title').filter(function(){
+			$(title).filter(function(){
 				var data = $(this);
 				var title = data.text();
 				json.title = title;
 			});
 			// Grab meta description
-			$('meta[name=description]').filter(function(){
+			$(description).filter(function(){
 				var data = $(this);
 				var description = data.attr("content");
 				json.description = description;
 			});
 			// Grab meta keywords
-			$('meta[name=keywords]').filter(function(){
+			$(keywords).filter(function(){
 				var data = $(this);
 				var keywords = data.attr("content");
 				json.keywords = keywords;
 			});
 			// Grab favicon path
-			$('link[rel=icon]').filter(function(){
+			$(favicon).filter(function(){
 				var data = $(this);
 				var favicon = data.attr('href');
 				json.favicon = favicon;
 			});
 			// Grab header - h1 tag
-      $('h1').filter(function(){
+      $(hOne).filter(function(){
         var data = $(this);
         var header = data.text();
         json.header = header;
         
       });
       // Grab img src content
-      $('img').filter(function(){
+      $(img).filter(function(){
       	var data = $(this);
       	var srcTag = data.attr('src');
       	json.srcTag = srcTag;
       });
       // Grab img alt content
-      $('img').filter(function(){
+      $(img).filter(function(){
       	var data = $(this);
       	var altTag = data.attr('alt');
       	json.altTag = altTag;
       });
       // Grab address
-      $('.address').filter(function(){
+      $(address).filter(function(){
       	var data = $(this);
       	var address = data.text();
       	json.address = address;
       });
       // Grab telephone
-      $('.telephone').filter(function(){
+      $(telephone).filter(function(){
       	var data = $(this);
       	var telephone = data.text();
       	json.telephone = telephone;
       });
       // Grab business hours
-      $('.hours').filter(function(){
+      $(hours).filter(function(){
         var data = $(this);
         var telephone = data.text();
         json.telephone = telephone;
       });
       // Grab video
-      $('.video iframe').filter(function(){
+      $(video).filter(function(){
       	var data = $(this);
       	var video = data.attr('src');
       	json.video = video;
       });
       // Grab Google Web Master Tools verification 
-      $('meta[name=google-site-verification]').filter(function(){
+      $(wmt).filter(function(){
       	var data = $(this);
       	var gwebmaster = data.attr('content');
       	json.gwebmaster = gwebmaster;
       }); 
       // Grab Google Analytics script src
-      $('head script').filter(function(){
+      $(analytics).filter(function(){
       	var data = $(this);
       	var ganalytics = data.attr('src');
       	json.ganalytics = ganalytics;
@@ -159,7 +178,6 @@ app.post('/process', function(request, response){
 			ganalytics: json.ganalytics
 		});
     console.log(json);
-    console.log("Check for results in a browser");
   });
 	
   
