@@ -179,8 +179,6 @@ app.post('/process', function(request, response){
 		});
     console.log(json);
   });
-	
-  
 });
 
 // Routes require
