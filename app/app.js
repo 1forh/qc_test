@@ -41,7 +41,7 @@ app.get('/the_test', function(request, response) {
 // Writes the domain entered in the form to app/data/domain.txt
 app.post('/process', function(request, response){
 	var domain = request.body.domain;
-
+  
 	console.log("Domain: " + domain);
 		
 	requestNPM(domain, function(err, res, html){

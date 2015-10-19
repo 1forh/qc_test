@@ -3,13 +3,14 @@
   <div class="col-lg-12">
     <div class="page-header">
       <h1>Quality Control Test for Websites</h1>
-      <p>Type a URL in the input field below and click "Go!".</p>
-      <p class="text-success">Information: Must have "http://" in front of URL.</p>
+      
     </div>
   </div><!-- /.col-lg-12 -->
 </div><!-- /.row -->
 <div id="input" class="row">
   <div class="col-md-6 col-md-offset-3">
+    <p>Type a URL in the input field below and click "Go!".</p>
+    <p class="text-success">Information: Must have "http://" in front of URL.</p>
     <form action="/process?form=the_test" method="POST">
       <div class="input-group">
       	<input type="hidden" name="_csrf" value="{{csrf}}">

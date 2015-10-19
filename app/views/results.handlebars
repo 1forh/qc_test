@@ -7,23 +7,24 @@
     </div>
   </div><!-- /.col-lg-12 -->
 </div><!-- /.row -->
+<div class="row" style="padding-bottom:30px;">
+  <div class="col-sm-6">
+    <p>Type a URL in the input field below and click "Go!".</p>
+    <p class="text-success">Information: Must have "http://" in front of URL.</p>
+    <form action="/process?form=the_test" method="POST">
+      <div class="input-group">
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <input type="url" name="domain" class="form-control" placeholder="Quality control this...">
+        <span class="input-group-btn">
+          <input type="submit" value="Go!" class="btn btn-default">
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </div>
+</div>
 <div id="output" class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-8">
     <div class="test_output">
-      <div class="row">
-        <div class="col-md-4">
-          <p class="text-success">Information: If the Contents field is blank, the Element is missing.</p>
-          <p class="text-success">Information: Address, Telephone, Business hours and Video checks the contents of the classes .address, .telephone, .hours and .video respectively.</p>
-        </div>
-        <div class="col-md-4">
-          <p class="text-warning">Tip: Use <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-alt-attribute/" target="_blank">Popup ALT Attribute</a> to easily view image alt attributes when quality control testing websites manually.</p>
-        </div>
-        <div class="col-md-4">
-          <p class="text-danger">*Attention: Image source tag and alt tag only prints out one image on the page. May still have to check the document manually. Will be fixed soon&trade;.</p>
-          <p class="text-danger">*Attention: The Google Analytics grabber is shaky. If the output is not "/google_analytics_auto.js", check document manually.</p>
-        </div>
-        
-      </div>
       <table class="table table-bordered">
         <caption>Check this information for quality.</caption>
         <thead>
@@ -101,10 +102,23 @@
             {{!-- <td>&#10003;</td> --}}
           </tr>
         </tbody>
-      </table>
-
-      
+      </table>      
     </div>
-  </div><!-- /.col-md-6 .col-md-offset-3 -->
+  </div><!-- /.col-md-6-->
+  <div class="col-md-4">
+    <div class="row">
+        <div class="col-md-12">
+          <p class="text-success">Information: If the Contents field is blank, the Element is missing.</p>
+          <p class="text-success">Information: Address, Telephone, Business hours and Video checks the contents of the classes .address, .telephone, .hours and .video respectively.</p>
+        </div>
+        <div class="col-md-12">
+          <p class="text-warning">Tip: Use <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-alt-attribute/" target="_blank">Popup ALT Attribute</a> to easily view image alt attributes when quality control testing websites manually.</p>
+        </div>
+        <div class="col-md-12">
+          <p class="text-danger">*Attention: Image source tag and alt tag only prints out one image on the page. May still have to check the document manually. Will be fixed soon&trade;.</p>
+          <p class="text-danger">*Attention: The Google Analytics grabber is shaky. If the output is not "/google_analytics_auto.js", check document manually.</p>
+        </div>
+      </div>
+  </div>
 </div><!-- /.row -->
 
