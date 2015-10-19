@@ -13,23 +13,77 @@
         <link rel="icon" href="/images/favicon.png">
 
         <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <style>
+      body{
+        font-size:17px;
+      }
+      #header{
+        background:#388E3C;
+        
+        padding:20px 0;
+      }
+      .navbar-brand{
+        font-size:2.0em;
+        color:#fff;
+      }
+      .navbar-brand:hover{
+        color:#00C853;
+        background:none;
+      }
+      a{
+        color:#00C853;
+        transition:all .3s ease-out;
+      }
+      a:hover{
+        background:#00C853;
+        color:#fff;
+        text-decoration:none;
+      }
+      .btn{
+        background:#00C853;
+        color:#fff;
+        transition:all .3s ease-out;
+      }
+      .btn:hover{
+        background:#388E3C;
+        color:#fff;
+      }
+      .information span,
+      .tip span,
+      .attention span{
+        font-weight:bold;
+      }
+      .information{
+        color:#006064;
+      }
+      .tip{
+        color:#512DA8;
+      }
+      .attention{
+        color:#D32F2F;
+      }
+    </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-          <div id="header" class="header">
-            <h3><a href="http://qctest.xyz">qc_test</a></h3>
-            <p class="text-muted">Created by: <a href="http://zacharyminner.com" target="_blank">Zachary Minner</a></p>
-          </div>
-          
-
-          {{{body}}}
-
-          <div class="footer">
+       
+        <div id="header" class="header">
+          <div class="container">
+            <a href="http://qctest.xyz" class="navbar-brand">qc_test</a>
             
           </div>
+        </div>
+        <main>
+          <div class="container">
+            {{{body}}}
+          </div>
+        </main>
+        <div id="footer" class="footer">
+          <div class="container">
+            
+          </div>  
         </div>
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script>
