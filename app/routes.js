@@ -4,7 +4,20 @@ var fs = require("fs");
 
 // route - index
 router.get('/', function(request, response){
-	response.render('home');
+  var article = {
+        url: "http://www.picturecorrect.com/tips/two-photographers-illegally-climb-the-new-tallest-building-in-china/",
+        imgSrc: "images/nah.jpg",
+        imgAlt: "nah",
+        figcaption: "Two photographers illegally climb the new tallest building in China."
+
+      };
+	response.render('home',{
+    url: article.url,
+    imgSrc: article.imgSrc,
+    imgAlt: article.imgAlt,
+    figCaption: article.figcaption
+
+  });
 });
 
 
