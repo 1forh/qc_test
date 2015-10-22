@@ -60,6 +60,8 @@ app.post('/process', function(request, response){
           hours = '.hours',
           payment = '.payment',
           areaServed = '.areaServed',
+          facebook = '.facebook',
+          googlePlus ='.googlePlus',
           wmt = 'meta[name=google-site-verification]',
           analytics = 'head script';
 
@@ -78,6 +80,8 @@ app.post('/process', function(request, response){
              hours: "",
              payment: "",
              areaServed: "",
+             facebook: "",
+             googlePlus: "",
      		gwebmaster: "",
      		ganalytics: ""
     	};
@@ -161,6 +165,18 @@ app.post('/process', function(request, response){
       	var video = data.attr('src');
       	json.video = video;
       });
+      // Grab facebook link
+      $(facebook).filter(function(){
+        var data = $(this);
+        var facebook = data.attr('href');
+        json.facebook = facebook;
+      });
+      // Grab google + link
+      $(googlePlus).filter(function(){
+        var data = $(this);
+        var googlePlus = data.attr('href');
+        json.googlePlus = googlePlus;
+      });
       // Grab Google Web Master Tools verification 
       $(wmt).filter(function(){
       	var data = $(this);
@@ -189,6 +205,8 @@ app.post('/process', function(request, response){
       hours: json.hours,
       payment: json.payment,
       areaServed: json.areaServed,
+      facebook: json.facebook,
+      googlePlus: json.googlePlus,
 	gwebmaster: json.gwebmaster,
 	ganalytics: json.ganalytics
 		});
