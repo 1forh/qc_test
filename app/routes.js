@@ -4,24 +4,7 @@ var fs = require("fs");
 
 // route - index
 router.get('/', function(request, response){
-  var article = [
-      {
-        url: "http://www.picturecorrect.com/tips/two-photographers-illegally-climb-the-new-tallest-building-in-china/",
-        imgSrc: "images/nah.jpg",
-        imgAlt: "nah",
-        title: "Two photographers illegally climb the new tallest building in China",
-        description: "Two Russian climbers, Vadim Makhorov and Vitaliy Raskalov, who have gained a reputation as fearless photog..."
-      }
-    ];
-	response.render('home',{
-    article: article,
-    url: article.url,
-    imgSrc: article.imgSrc,
-    imgAlt: article.imgAlt,
-    title: article.title,
-    description: article.description
-
-  });
+    response.render('home');
 });
 
 

@@ -28,8 +28,6 @@ var hbs = handlebars.create({
 app.engine('handlebars', hbs.engine);  
 app.set('view engine', 'handlebars'); 
 
-
-
 // Form handling
 app.use(require('body-parser').urlencoded({
 	extended:true }));
