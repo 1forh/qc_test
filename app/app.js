@@ -58,10 +58,10 @@ app.post('/process', function(request, response){
           telephone = '.telephone',
           video = '.video iframe',
           hours = '.hours',
+          payment = '.payment',
+          areaServed = '.areaServed',
           wmt = 'meta[name=google-site-verification]',
           analytics = 'head script';
-
-
 
       // Assign json variables
       var json = { 
@@ -75,37 +75,38 @@ app.post('/process', function(request, response){
      		address: "", 
      		telephone: "",
      		video: "",
-        hours: "",
+             hours: "",
+             payment: "",
+             areaServed: "",
      		gwebmaster: "",
      		ganalytics: ""
     	};
       
-
-			// Grab title tag
-			$(title).filter(function(){
-				var data = $(this);
-				var title = data.text();
-				json.title = title;
-			});
-			// Grab meta description
-			$(description).filter(function(){
-				var data = $(this);
-				var description = data.attr("content");
-				json.description = description;
-			});
-			// Grab meta keywords
-			$(keywords).filter(function(){
-				var data = $(this);
-				var keywords = data.attr("content");
-				json.keywords = keywords;
-			});
-			// Grab favicon path
-			$(favicon).filter(function(){
-				var data = $(this);
-				var favicon = data.attr('href');
-				json.favicon = favicon;
-			});
-			// Grab header - h1 tag
+	// Grab title tag
+	$(title).filter(function(){
+		var data = $(this);
+		var title = data.text();
+		json.title = title;
+	});
+	// Grab meta description
+	$(description).filter(function(){
+		var data = $(this);
+		var description = data.attr("content");
+		json.description = description;
+	});
+	// Grab meta keywords
+	$(keywords).filter(function(){
+		var data = $(this);
+		var keywords = data.attr("content");
+		json.keywords = keywords;
+	});
+	// Grab favicon path
+	$(favicon).filter(function(){
+		var data = $(this);
+		var favicon = data.attr('href');
+		json.favicon = favicon;
+	});
+	// Grab header - h1 tag
       $(hOne).filter(function(){
         var data = $(this);
         var header = data.text();
@@ -139,8 +140,20 @@ app.post('/process', function(request, response){
       // Grab business hours
       $(hours).filter(function(){
         var data = $(this);
-        var telephone = data.text();
-        json.telephone = telephone;
+        var hours = data.text();
+        json.hours = hours;
+      });
+       // Grab payment methods
+      $(payment).filter(function(){
+        var data = $(this);
+        var payment= data.text();
+        json.payment = payment;
+      });
+       // Grab area served
+      $(areaServed).filter(function(){
+        var data = $(this);
+        var areaServed = data.text();
+        json.areaServed = areaServed;
       });
       // Grab video
       $(video).filter(function(){
@@ -162,20 +175,22 @@ app.post('/process', function(request, response){
       });
     } 
     response.render('./results', {
-			domain: domain,
-			title: json.title,
-			description: json.description,
-			keywords: json.keywords,
-			favicon: json.favicon,
-			header: json.header,
-			srcTag: json.srcTag,
-			altTag: json.altTag,
-			address: json.address,
-			telephone: json.telephone,
-			video: json.video,
+	domain: domain,
+	title: json.title,
+	description: json.description,
+	keywords: json.keywords,
+	favicon: json.favicon,
+	header: json.header,
+	srcTag: json.srcTag,
+	altTag: json.altTag,
+	address: json.address,
+	telephone: json.telephone,
+	video: json.video,
       hours: json.hours,
-			gwebmaster: json.gwebmaster,
-			ganalytics: json.ganalytics
+      payment: json.payment,
+      areaServed: json.areaServed,
+	gwebmaster: json.gwebmaster,
+	ganalytics: json.ganalytics
 		});
     console.log(json);
   });

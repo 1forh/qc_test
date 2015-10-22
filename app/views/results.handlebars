@@ -36,6 +36,55 @@
         </thead>
         <tbody>
           <tr>
+            <th>Telephone</th>
+            <td>{{telephone}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>{{address}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Business Hours</th>
+            <td>{{hours}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Payment Methods</th>
+            <td>{{payment}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Favicon</th>
+            <td><a href="{{domain}}{{favicon}}" target="_blank">{{favicon}}</a></td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Area Served</th>
+            <td>{{areaServed}}</td>
+          </tr>
+          <tr>
+            <th>Video</th>
+            <td><a href="{{video}}" target="_blank">{{video}}</a></td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Image src tag <span>*</span></th>
+            <td><a href="{{domain}}{{srcTag}}" target="_blank">{{srcTag}}</a></td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
+            <th>Image alt tag <span>*</span></th>
+            <td>{{altTag}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+           <tr>
+            <th>H1 tag</th>
+            <td>{{header}}</td>
+            {{!-- <td>&#10003;</td> --}}
+          </tr>
+          <tr>
             <th>Title tag</th>
             <td>{{title}}</td>
             {{!-- <td>&#10003;</td> --}}
@@ -51,56 +100,18 @@
             {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
-            <th>Favicon</th>
-            <td><a href="{{domain}}{{favicon}}" target="_blank">{{favicon}}</a></td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          <tr>
-            <th>H1 tag(s)</th>
-            <td>{{header}}</td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          <tr>
-            <th>Image src tag <span>*</span></th>
-            <td><a href="{{domain}}{{srcTag}}" target="_blank">{{srcTag}}</a></td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          <tr>
-            <th>Image alt tag <span>*</span></th>
-            <td>{{altTag}}</td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          
-          <tr>
-            <th>Google Web Master Tools</th>
-            <td>{{gwebmaster}}</td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          <tr>
             <th>Google Analytics <span>*<span></th>
             <td>{{ganalytics}}</td>
             {{!-- <td>&#10003;</td> --}}
           </tr>
           <tr>
-            <th>Address</th>
-            <td>{{address}}</td>
+            <th>Google Web Master Tools</th>
+            <td>{{gwebmaster}}</td>
             {{!-- <td>&#10003;</td> --}}
           </tr>
-          <tr>
-            <th>Telephone</th>
-            <td>{{telephone}}</td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          <tr>
-            <th>Business Hours</th>
-            <td>{{hours}}</td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
-          <tr>
-            <th>Video</th>
-            <td><a href="{{video}}" target="_blank">{{video}}</a></td>
-            {{!-- <td>&#10003;</td> --}}
-          </tr>
+          
+          
+          
         </tbody>
       </table>      
     </div>
@@ -109,7 +120,7 @@
     <div class="row">
         <div class="col-md-12">
           <p class="information"><span>Information:</span> If the Contents field is blank, the Element is missing.</p>
-          <p class="information"><span>Information:</span> Address, Telephone, Business Hours and Video checks the contents of the classes .address, .telephone, .hours and .video respectively.</p>
+          <p class="information"><span>Information:</span> Address, Telephone, Business Hours, Payment Methods, and Video checks the contents of the classes .address, .telephone, .hours, .payment and .video respectively.</p>
         </div>
         <div class="col-md-12">
           <p class="tip"><span>Tip:</span> Use <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-alt-attribute/" target="_blank">Popup ALT Attribute</a> for Firefox to easily view image alt attributes when quality control testing websites by hand.</p>
