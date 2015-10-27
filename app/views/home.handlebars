@@ -9,12 +9,11 @@
 </div><!-- /.row -->
 <div id="input" class="row">
   <div class="col-md-6 col-md-offset-3">
-    <p>Type a URL in the input field below and click "Go!".</p>
-    <p class="information">Information: Must have "http://" in front of URL.</p>
+    <p class="text-muted">Quality control a website:</p>
     <form action="/process?form=the_test" method="POST">
       <div class="input-group">
       	<input type="hidden" name="_csrf" value="{{csrf}}">
-        <input type="url" name="domain" class="form-control" placeholder="Quality control this...">
+        <input type="url" name="domain" class="form-control" placeholder="http://www.trailerparkboys.com">
         <span class="input-group-btn">
           <input type="submit" value="Go!" class="btn btn-default">
         </span>

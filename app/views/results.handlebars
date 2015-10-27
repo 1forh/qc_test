@@ -8,12 +8,11 @@
   </div>
   <div class="col-md-6">
     <div class="page-header last">
-      <p>Type a URL in the input field below and click "Go!".</p>
-      <p class="information">Information: Must have "http://" in front of URL.</p>
+      <p class="text-muted">Quality control a website:</p>
       <form action="/process?form=the_test" method="POST">
         <div class="input-group">
           <input type="hidden" name="_csrf" value="{{csrf}}">
-          <input type="url" name="domain" class="form-control" placeholder="Quality control this...">
+          <input type="url" name="domain" class="form-control" placeholder="http://www.trailerparkboys.com">
           <span class="input-group-btn">
             <input type="submit" value="Go!" class="btn btn-default">
           </span>
@@ -23,10 +22,15 @@
   </div>
 </div><!-- /.row -->
 <div id="output" class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="test_output">
+      <a href="http://app.validator.pro/" class="btn btn-default" target="_blank">Spell Checker</a>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-alt-attribute/" class="btn btn-default" target="_blank">Alt Tag Firefox Plugin</a>
       <table class="table table-bordered">
-        <caption>Check this information for quality.</caption>
+        <caption>
+          <p class="attention">Attention: If the Contents field is blank, the Element is missing.</p>
+          <p class="attention">Attention: If the output of Google Analytics is not "/google_analytics_auto.js", check document manually.</p>
+        </caption>
         <thead>
           <tr>
             <th>Element</th>
@@ -122,23 +126,13 @@
         </tbody>
       </table>      
     </div>
-  </div><!-- /.col-md-6-->
+  </div>
   <div class="col-md-4">
     <div class="row">
         <div class="col-md-12">
-          <p class="information"><span>Information:</span> If the Contents field is blank, the Element is missing.</p>
-          <p class="information"><span>Information:</span> Address, Telephone, Business Hours, Payment Methods, Area Served and Video checks the contents of the classes .address, .telephone, .hours, .payment, .areaServed and .video respectively.</p>
-          <p class="information"><span>Information:</span> Facebook and Google+ check anchor tags (links) for their respective classes: .facebook and .googlePlus.</p>
-        </div>
-        <div class="col-md-12">
-          <p class="tip"><span>Tip:</span> Use <a href="https://addons.mozilla.org/en-US/firefox/addon/popup-alt-attribute/" target="_blank">Popup ALT Attribute</a> for Firefox to easily view image alt attributes when quality control testing websites by hand.</p>
-          <p class="tip"><span>Tip:</span> Try <a href="http://app.validator.pro/" target="_blank">HTML App Validator Pro</a> for spell checking entire websites.</p>
-        </div>
-        <div class="col-md-12">
-          <p class="attention"><span>*Attention:</span> Image source tag and alt tag only prints out one image on the page. May still have to check the document manually. Will be fixed soon&trade;.</p>
-          <p class="attention"><span>*Attention:</span> The Google Analytics grabber is shaky. If the output is not "/google_analytics_auto.js", check document manually.</p>
+          
         </div>
       </div>
   </div>
-</div><!-- /.row -->
+</div>
 
