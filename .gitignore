@@ -1,6 +1,9 @@
 node_modules
+client/bower_components
 
-app/css
-tests
-test
+.tmp
+.sass-cache
 npm-debug.log
+
+
+

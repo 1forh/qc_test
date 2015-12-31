@@ -1,17 +1,17 @@
 {
   "name": "qc_test",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Quality control test for websites",
-  "main": "app/app.js",
+  "main": "server/app.js",
   "scripts": {
-    "start": "node app/app.js"
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1forh/qc_test.git"
   },
   "author": "Zachary Minner",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/1forh/qc_test/issues"
   },

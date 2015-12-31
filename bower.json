@@ -1,9 +1,9 @@
 {
   "name": "qc_test",
-  "version": "0.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/1forh/qc_test",
   "authors": [
-    "Zachary Minner <1forhlol@gmail.com>"
+    "Zachary Minner <14forh@gmail.com>"
   ],
   "description": "Quality control test for websites",
   "main": "",
@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "bootstrap": "~3.3.5"
+    "foundation-sites": "~6.1.1"
   }
 }
