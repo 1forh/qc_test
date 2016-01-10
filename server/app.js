@@ -12,7 +12,8 @@ var app = express();
 var views = path.join('./client/views');
 
 // Require applications folders and files
-require('./scraper')(app);
+
+require('./results')(app);
 require('./routes')(app);
 
 // Require static files
