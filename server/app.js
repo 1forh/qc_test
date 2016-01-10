@@ -12,7 +12,6 @@ var app = express();
 var views = path.join('./client/views');
 
 // Require applications folders and files
-
 require('./results')(app);
 require('./routes')(app);
 
@@ -31,7 +30,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars'); 
 
 // Set up the server
-var server = app.listen(3000, function(){
+var server = app.listen(3000, function() {
   var host = server.address().address;
   var port = server.address().port;
 

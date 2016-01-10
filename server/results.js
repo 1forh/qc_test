@@ -15,7 +15,7 @@ module.exports = function(app){
   app.use(parser.urlencoded({ extended: false }));
 
   // Except Post Data from from
-  app.post('/results', function(request, response){
+  app.post('/results', function(request, response) {
 
      // Except domain from the form
     var domain = request.body.domain;
