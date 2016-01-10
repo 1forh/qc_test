@@ -6,22 +6,28 @@
 
 module.exports = function(app){
 
-  app.get('/', function(request, response){
-    response.render('home');
+  // Create regular page routes
+  var route = function(path, page) {
+    app.get(path, function(req, res){
+      res.render(page);
+    });
+  };
+
+  // Call route function for reach page in application
+  route('/', 'home');
+  route('/api', 'api');
+  route('/results', 'results');
+
+  // Show 404 page and mark status as 404
+  app.use(function(req, res){
+    res.status(404);
+    res.render('404');
   });
 
-  app.get('/the_test', function(request, response) {
-    response.render('the_test');
-  });
-
-  app.use(function(request, response){
-    response.status(404);
-    response.render('404');
-  });
-
-  app.use(function(request, response){
-    response.status(500);
-    response.render('500');
+  // Show 500 page and mark status as 500
+  app.use(function(req, res){
+    res.status(500);
+    res.render('500');
   });
   
 };

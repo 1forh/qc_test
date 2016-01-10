@@ -12,26 +12,27 @@ var config = require('./config');
 
 module.exports = function(app){
 
-  // Form handling
-  app.use(parser.urlencoded({ extended:true } ) );
+  // Parse application/x-www-form-urlencoded
+  app.use(parser.urlencoded({ extended: false }))
 
-  app.post('/process', function(request, response){
+  // Except Post Data from from
+  app.post('/results', function(request, response){
+    // Except domain from the form
+    var domain = request.body.domain;
+    console.log("Domain: " + domain);
 
-    var domain = request.body.domain; // Get domain from form name="domain"
+    // Save to json api
+      
 
-    console.log("Domain: " + domain); // Test for correct domain in console
+    // Extract website <title> from domain
+      // Save to json api
 
-    req(domain, function(error, res, html){
-      var $ = cheerio.load(html);
-      var title = 'title';
-
-      $(title).filter(function(){
-        var data = $(this);
-        var title = data.text();
-        config.element.title = title;
-      });
-      console.log(config.element);
+    // Redirect to /results
+    response.render('results', {
+      domain: domain
     });
-
   });
+
+      
+
 };
