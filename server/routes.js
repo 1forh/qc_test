@@ -18,13 +18,13 @@ module.exports = function(app){
   route('/results', 'results');
 
   // Show 404 page and mark status as 404
-  app.use(function(req, res){
+  app.use(function(req, res) {
     res.status(404);
     res.render('404');
   });
 
   // Show 500 page and mark status as 500
-  app.use(function(req, res){
+  app.use(function(req, res) {
     res.status(500);
     res.render('500');
   });
