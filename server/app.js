@@ -16,7 +16,7 @@ require('./form')(app);
 require('./routes')(app);
 
 // Require static files
-app.use(express.static(__dirname + '/client/assets/'));
+app.use(express.static(__dirname + '/assets'));
 
 // Set up handlbars view engine
 var hbs = handlebars.create({  

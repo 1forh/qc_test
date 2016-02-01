@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/app.js",
     "test": "mocha test/",
-    "deploy": "heroku deploy"
+    "deploy": "heroku"
   },
   "repository": {
     "type": "git",
@@ -19,13 +19,7 @@
   },
   "homepage": "https://github.com/1forh/qc_test#readme",
   "devDependencies": {
-    "browser-sync": "^2.9.11",
     "chai": "^*",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.6.0",
     "mocha": "*"
   },
   "dependencies": {

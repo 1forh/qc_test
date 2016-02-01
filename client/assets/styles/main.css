@@ -1,0 +1,53 @@
+.header {
+        background:#006064;
+        padding:1.5em 0;
+        margin-bottom:2em;
+        
+      }
+      
+      .header .container {
+        display:flex;
+        align-items:center;
+        
+      }
+
+      .created {
+        margin:0;
+        color:#fff;
+      }
+
+      .created a {
+        color:inherit;
+      }
+      
+      .logo-wrap {
+        flex-grow:1;
+      }
+
+      .logo {
+        color:#fff;
+        font-size:2.3em;
+        transition:all 0.3s ease-out;
+        padding:0.3em;
+        
+      }
+      
+      .logo:hover {
+        background-color:#fff;
+        color:#006064;
+        text-decoration:none;
+      }
+
+      input[type="url"] {
+        margin-bottom:1em;
+      }
+
+      hr {
+        border:1px dashed #006064;
+      }
+
+      .btn {
+        background-color:#006064;
+        color:#fff;
+        font-size:1.2em;
+      }
