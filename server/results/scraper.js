@@ -2,7 +2,7 @@
  * Website scraper
  */
 
- 'use strict';
+'use strict';
 
 var cheerio = require('cheerio');
 

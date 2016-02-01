@@ -23,6 +23,7 @@ module.exports = function(app) {
     req(domain, function(error, res, html) {
       console.log('Scraping now...');
       
+      // List the results dependencies
       var results =  require('./scraper')(html);
       
       console.log('Check the browser.');
