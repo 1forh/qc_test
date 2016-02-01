@@ -1,7 +1,7 @@
+<h1>Domain: <a href="{{domain}}" target="_blank">{{domain}}</a></h1>
+<hr>
+<h3>Meta</h3>
 <table class="table table-bordered">
-  <caption>
-    <h2>Domain: {{domain}}</h2>
-  </caption>
   <thead>
     <tr>
       <th>Element</th>
@@ -13,7 +13,67 @@
     <tr>
       <th>Title tag</th>
       <td>{{title}}</td>
-      {{!-- <td>&#10003;</td> --}}
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{description}}</td>
     </tr>
   </tbody>
 </table>      
+
+<h3>Important Body Elements</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Contents</th>
+      {{!-- <th>Pass?</th> --}}
+    </tr>
+  </thead>
+  <tbody>
+      <th>H1 tag</th>
+      <td>{{h1}}</td>
+    </tr>
+    <tr>
+      <th>Favicon</th>
+      <td><a href="{{domain}}/{{favicon}}" target="_blank">{{favicon}}</a></td>
+    </tr>
+    <tr>
+      <th>Image Sources</th>
+      <td>
+        <ul>
+          {{#each imageSrc}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th>Image Alts</th>
+      <td>
+        <ul>
+          {{#each imageAlt}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>      
+
+<h3>Web Tools</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Contents</th>
+      {{!-- <th>Pass?</th> --}}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Google Analytics</th>
+      <td>{{analytics}}</td>
+    </tr>
+  </tbody>
+</table> 

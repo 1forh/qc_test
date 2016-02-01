@@ -12,7 +12,7 @@ var app = express();
 var views = path.join('./client/views');
 
 // Require applications folders and files
-require('./results')(app);
+require('./form')(app);
 require('./routes')(app);
 
 // Require static files

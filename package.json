@@ -5,7 +5,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node server/app.js",
-    "test": "mocha test/"
+    "test": "mocha test/",
+    "deploy": "heroku deploy"
   },
   "repository": {
     "type": "git",

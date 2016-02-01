@@ -15,7 +15,6 @@ module.exports = function(app){
 
   // Call route function for reach page in application
   route('/', 'home');
-  route('/api', 'api');
   route('/results', 'results');
 
   // Show 404 page and mark status as 404
