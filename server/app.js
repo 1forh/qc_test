@@ -29,8 +29,10 @@ app.set('views', views);
 app.engine('handlebars', hbs.engine);  
 app.set('view engine', 'handlebars'); 
 
+app.set('port', process.env.PORT || 3000);
+
 // Set up the server
-var server = app.listen(3000, function() {
+var server = app.listen(app.get('port'), function() {
   var host = server.address().address;
   var port = server.address().port;
 
