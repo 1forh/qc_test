@@ -59,6 +59,14 @@ module.exports = function(html) {
   };
 
   var results = {
+    telephone: scrape_text('.telephone'),
+    address: scrape_text('.address'),
+    hours: scrape_text('.hours'),
+    payment: scrape_text('.payment'),
+    areaServed: scrape_text('.areaServed'),
+    video: scrape_attr('.video iframe', 'src'),
+    facebook: scrape_attr('.facebook', 'href'),
+    googlePlus: scrape_attr('.googlePlus', 'href'),
     title: scrape_text('title'),
     h1: scrape_text('h1'),
     description: scrape_attr('meta[name=description]', 'content'),

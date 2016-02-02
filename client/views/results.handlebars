@@ -1,25 +1,5 @@
 <h1>Domain: <a href="{{domain}}" target="_blank">{{domain}}</a></h1>
 <hr>
-<h3>Meta</h3>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Element</th>
-      <th>Contents</th>
-      {{!-- <th>Pass?</th> --}}
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Title tag</th>
-      <td>{{title}}</td>
-    </tr>
-    <tr>
-      <th>Description</th>
-      <td>{{description}}</td>
-    </tr>
-  </tbody>
-</table>      
 
 <h3>Important Body Elements</h3>
 <table class="table table-bordered">
@@ -27,16 +7,44 @@
     <tr>
       <th>Element</th>
       <th>Contents</th>
-      {{!-- <th>Pass?</th> --}}
     </tr>
   </thead>
   <tbody>
-      <th>H1 tag</th>
-      <td>{{h1}}</td>
+    <tr>
+      <th>Telephone</th>
+      <td>{{telephone}}</td>
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td>{{address}}</td>
+    </tr>
+    <tr>
+      <th>Business Hours</th>
+      <td>{{hours}}</td>
+    </tr>
+    <tr>
+      <th>Payment Methods</th>
+      <td>{{payment}}</td>
     </tr>
     <tr>
       <th>Favicon</th>
       <td><a href="{{domain}}/{{favicon}}" target="_blank">{{favicon}}</a></td>
+    </tr>
+    <tr>
+      <th>Area Served</th>
+      <td>{{areaServed}}</td>
+    </tr>
+    <tr>
+      <th>Video</th>
+      <td><a href="{{video}}" target="_blank">{{video}}</a></td>
+    </tr>
+    <tr>
+      <th>Facebook</th>
+      <td><a href="{{facebook}}" target="_blank">{{facebook}}</a></td>
+    </tr>
+    <tr>
+      <th>Google+</th>
+      <td><a href="{{googlePlus}}" target="_blank">{{googlePlus}}</a></td>
     </tr>
     <tr>
       <th>Image Sources</th>
@@ -58,8 +66,32 @@
         </ul>
       </td>
     </tr>
+    <tr>
+      <th>H1 tag</th>
+      <td>{{h1}}</td>
+    </tr>
   </tbody>
 </table>      
+
+<h3>Meta</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Title tag</th>
+      <td>{{title}}</td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>{{description}}</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3>Web Tools</h3>
 <table class="table table-bordered">
@@ -67,13 +99,16 @@
     <tr>
       <th>Element</th>
       <th>Contents</th>
-      {{!-- <th>Pass?</th> --}}
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>Google Analytics</th>
       <td>{{analytics}}</td>
+    </tr>
+    <tr>
+      <th>Google Web Master Tools</th>
+      <td>{{webmaster}}</td>
     </tr>
   </tbody>
 </table> 

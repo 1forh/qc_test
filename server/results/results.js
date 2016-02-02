@@ -37,7 +37,14 @@ module.exports = function(app) {
         favicon: results.favicon,
         imageSrc: results.image_src,
         imageAlt: results.image_alt,
-        analytics: results.analytics
+        analytics: results.analytics,
+        telephone: results.telephone,
+        address: results.address,
+        hours: results.hours,
+        payment: results.payment,
+        areaServed: results.areaServed,
+        facebook: results.facebook,
+        googlePlus: results.googlePlus
       });
     });
   });
