@@ -70,8 +70,24 @@
       </td>
     </tr>
     <tr>
+      <th>Image Titles</th>
+      <td>
+        <ul>
+          {{#each imageTitle}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <th>H1 tag</th>
-      <td>{{h1}}</td>
+      <td>
+        <ul>
+          {{#each h1}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </td>
     </tr>
   </tbody>
 </table>      

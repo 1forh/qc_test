@@ -37,6 +37,7 @@ module.exports = function(app) {
         favicon: results.favicon,
         imageSrc: results.image_src,
         imageAlt: results.image_alt,
+        imageTitle: results.image_title,
         analytics: results.analytics,
         telephone: results.telephone,
         address: results.address,

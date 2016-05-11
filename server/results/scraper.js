@@ -10,10 +10,10 @@ module.exports = function(html) {
   var $ = cheerio.load(html);
 
   var scrape_text = function(el) {
-    var result;
+    var result = [];
 
-    $(el).filter(function() {
-      result = $(this).text();
+    $(el).each(function(i, elem) {
+      result[i] = $(this).text();
     });
 
     return result;
@@ -73,6 +73,7 @@ module.exports = function(html) {
     favicon: scrape_attr('link[rel=icon]', 'href'),
     image_src: scrape_images('src'),
     image_alt: scrape_images('alt'),
+    image_title: scrape_images('title'),
     analytics: scrape_analytics()
   };
 
